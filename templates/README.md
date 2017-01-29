@@ -1,0 +1,31 @@
+**Policy Editor Template Directory:**
+
+Purpose: To prototype the Policy Editor front end.
+
+**HTML Files**
+
+Core components: Scaffolding for application profiles, new policy creation, existing policies, and integration of the JS libraries and CSS styles within the HTML.
+
+- simple-app-metrics.html - Metrics Policy template forms, list of policies, and policy editing features.
+- simple-app-schedule.html - Schedule Policy template forms, list of policies, and policy editing features.
+
+**CSS Files and dependencies**
+
+- style.css: Customized to support Atlantic UI and Bootstrap styles and conflicts.
+- aui-standard.min.css: Cisco Atlantic UI Kit styles and fonts and grid system for responsive web design. http://swtg-rtp-dev-7/styleguide-dist/1.0.1-official/section-aui.html#aui-components-toast
+- bootstrap.css: Bootstrap styles for design features.
+- bootstrap.css.map: Bootstrap CSS dependency
+- font-awesome.min.css: Global font library. Fonts are imported from fonts directory.
+
+**JS Library Files and dependencies**
+
+- jquery-2.1.4.min.js: Supports the following libraries/dependencies
+- bootstrap.min.js: Bootstrap v3.3.7 http://getbootstrap.com, NPM: https://www.npmjs.com/package/bootstrap
+- jquery.modals.js: A simple & lightweight method of displaying modal windows with jQuery. https://github.com/kylefox/jquery-modal
+- moment.min.js: Is a dependency for the datetimepicker. Helps format dates in the widget. https://github.com/moment/moment/
+- moment-with-locals.js: Is a dependency for the datetimepicker. Helps format geo locations in the widget.
+- bootstrap-datetimepicker.js: Altered for styles and fonts.  https://github.com/Eonasdan/bootstrap-datetimepicker
+
+**Font Files**
+
+Font directory contains Cisco Atlantic UI Kit fonts, Bootstrap fonts, and Font-awesome fonts for iconography. http://fontawesome.io/icons/.

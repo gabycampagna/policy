@@ -1,0 +1,1115 @@
+body {
+  font-family: CiscoSans,Arial,sans-serif;
+  color: #58585b;
+}
+
+/* destop view css */
+.create-policy {
+  margin: 0 0 10px 10px;
+}
+
+.applications {
+  margin: 26px 0 20px 0;
+}
+
+.policies-all {
+  margin: 0 16px;
+}
+
+/* dropdown-toggle select */
+.dropdown-toggle {
+  background: #049fd9;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  margin-top: 5px;
+  width: 200px;
+}
+
+.bootstrap-select>.dropdown-toggle.bs-placeholder,
+.filter-option {
+  color: #fff;
+  text-align: center;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  width: 90%;
+  font-size: .9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a span.text,
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+  font-size: .9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+span.bs-caret {
+  color: #fff;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+  margin-left: 8px;
+  margin-top: -8px;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+  display: none;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 2px;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #ccc;
+  margin: 2px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: transparent;
+  margin: 0px;
+}
+
+.content::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: transparent;
+  margin: 0px;
+}
+
+input.git-input {
+  margin-top: 5px;
+  width: 275px;
+}
+
+.go-btn {
+  position: absolute;
+  top: 5px;
+  left: 290px;
+}
+
+.activity.composition {
+  margin-bottom: 2px;
+  background: #eee;
+}
+
+.activity.composition div.thumb, .activity.composition div.activity__body div {
+  color: #58585b;
+  margin-bottom: 2px;
+  background: #fff;
+  font-weight: 600;
+}
+
+.policy-container {
+  background-color: #fff;
+  color: #58585b;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+}
+.policy-container h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.modal-title {
+  font-size: 1.2;
+}
+
+input.form-control {
+  width: 260px;
+  height: 30px;
+}
+
+.btn-date {
+  background-color: transparent;
+  color: #58585b;
+  padding: 0;
+  border: none;
+}
+
+/* hack for bootstrap popover content  */
+  .popover.top {
+    margin-left: 10px;
+    border-radius: 2px;
+  }
+
+  .popover.top > .arrow {
+    border-top-color: #58585b;
+  }
+
+  .popover.top > .arrow:after {
+    border-top-color: #58585b;
+  }
+
+.form-group a.icon-question-circle {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    position: absolute;
+    color: #9e9ea2;
+    top: 5px;
+}
+
+.form-group a.icon-question-circle:hover {
+    opacity: .7;
+}
+
+@media (max-width: 452px) {
+  .form-group a.icon-question-circle {
+    top: 34px;
+  }
+}
+
+
+ /*style updates for Atlantic UI */
+.toast.toast--compressed:hover {
+  background: transparent;
+  border: 5.25px solid rgba(4, 159, 217, 0.91) }
+.toast--compressed.tile {
+  cursor: pointer;;
+  margin-bottom: 4px;
+}
+
+.tile-icon-bg {
+  background-color: #dfdfdf;
+  border: 2px solid #ddd;
+}
+
+.toast__title {
+  margin-top: 4px;
+}
+
+.panel {
+  margin: 8px 0;
+  padding: 4.5px;
+}
+
+.cancel-region-mobile {
+  /*display: none;*/
+}
+
+.cancel-region {
+  display: none;
+}
+
+.alert {
+  color: #58585b;
+  padding: 10px;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 0px;
+  margin-bottom: 0px !important;
+  }
+
+.alert a {
+  margin-top: 30px;
+  color: #fff !important;
+  font-weight: 500;
+  padding: 4px 10px;
+  margin-left: 15px;
+  display: inline;
+  text-align: center;
+  text-decoration: none;
+  background-color: #9e9ea2;;
+  border-radius: 15px;
+}
+
+.alert a:hover {
+  opacity: .7;
+}
+
+ .bootstrap-datetimepicker-widget table .fa,
+  .bootstrap-datetimepicker-widget table .glyphicon {
+  font-size: 1rem;
+}
+
+/* Mobile: Cancel region for CREATE policy form only */
+ .cancel-policy-mobile {
+     display: inline;
+     padding: 10px 0;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     width: 100%;
+   }
+
+ .cancel-policy-mobile > span {
+     padding: 5px 10px;
+     font-size: 1.2rem;
+     background-color: #049fd9;
+     border-radius: 50%;
+     margin-right: 10px;
+     margin-top: 10px;
+   }
+
+ .cancel-policy-mobile > span.icon-save,
+ .cancel-policy-mobile > span.icon-reset,
+ .cancel-policy-mobile > span.icon-close {
+     color: #fff;
+     cursor: pointer;
+     line-height: 1.4rem;
+     background-color: #9e9ea2;
+   }
+
+ .cancel-policy-mobile > span.icon-save:hover,
+ .cancel-policy-mobile > span.icon-reset:hover,
+ .cancel-policy-mobile > span.icon-close:hover {
+    opacity: .7;
+   }
+
+/* Mobile: Cancel region for EDIT policy panel */
+ .cancel-region-mobile {
+   display: inline-block;;
+   font-size: 1.3rem;
+
+ }
+
+ .cancel-region-mobile > span {
+   padding: 5px 10px;
+   margin-right: 20px;
+ }
+
+ .cancel-region-mobile > span.icon-trash,
+ .cancel-region-mobile > span.icon-save,
+ .cancel-region-mobile > span.icon-close {
+   color: #fff;
+   cursor: pointer;
+ }
+
+ .cancel-region-mobile > span.icon-trash:hover,
+ .cancel-region-mobile > span.icon-save:hover,
+ .cancel-region-mobile > span.icon-close:hover {
+  opacity: .8;
+ }
+
+
+.scoreboard.composition {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .scoreboard.composition div.scoreboard__title,
+  .scoreboard.composition div.scoreboard__subtitle {
+    background: rgba(0, 0, 0, 0.2);
+    color: #f2f2f2;
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 10.5px;
+    margin: 2px 0;
+    margin-bottom: 5px;
+    pointer-events: none;
+    opacity: 1; }
+
+.scoreboard {
+  color: #58585b;
+  position: relative;
+  background: #ffffff;
+  box-shadow: none;
+  border: 1px solid #dfdfdf;
+  padding: 10.5px;
+  margin-bottom: 5px;
+  text-align: left; }
+  .scoreboard__title {
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word; }
+  .scoreboard__subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-size: 0.875rem;
+    color: #9e9ea2; }
+
+.control-label span.icon-calendar {
+    font-size: 2rem;
+    display: block;
+    color: rgba(88, 88, 91, 0.7);
+}
+
+.scoreboard__subtitle > span > span.icon-edit,
+.scoreboard__subtitle > span > span.icon-trash {
+  color: #9e9ea2;
+  cursor: pointer;
+}
+
+.scoreboard__subtitle > span > span.icon-edit:hover,
+.scoreboard__subtitle > span > span.icon-trash:hover {
+  opacity: .4;
+}
+
+/* mobile view css */
+@media (min-width: 300px) {
+  .header-toolbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-toolbar > * {
+    margin: 0 20px 0 0;
+  }
+  .header-toolbar > *:first-child {
+    margin-left: 0;
+  }
+  .header-toolbar > *:last-child {
+    margin-right: 0;
+  }
+  .header-toolbar .button {
+    background: #9e9ea2;
+    color: #ffffff;
+  }
+  .header-toolbar .button:hover, .header-toolbar .button:focus {
+    box-shadow: 0 0 0 0 transparent;
+    background-color: #049fd9;
+    color: #ffffff;
+  }
+  .header-toolbar .button:active, .header-toolbar .button.button--active {
+    box-shadow: 0 0 0 0 transparent;
+    color: #ffffff;
+    background-color: #58585b;
+  }
+  .header-toolbar .button.disabled {
+    opacity: 1;
+    color: #c6c7ca;
+    background-color: #dfdfdf;
+  }
+  .header-toolbar .button.button--info {
+    background: #64bbe3;
+    color: #ffffff;
+  }
+  .header-toolbar .button.button--info:hover, .header-toolbar .button.button--info:focus {
+    box-shadow: 0 0 0 0 transparent;
+    background-color: #049fd9;
+    color: #ffffff;
+  }
+  .header-toolbar .button.button--info:active, .header-toolbar .button.button--info.button--active {
+    box-shadow: 0 0 0 0 transparent;
+    color: #ffffff;
+    background-color: #58585b;
+  }
+  /* logo */
+  .header-bar__logo {
+    display: block;
+    margin: 0 30px 0 0;
+  }
+
+  .header-bar__logo:hover {
+    text-decoration: none;
+  }
+
+  .header-bar__logo span.icon-cisco {
+    display: block;
+    color: #049fd9;
+    font-size: 2.1875rem;
+    line-height: 1; }
+
+  .header-bar__logo img {
+    display: block;
+    width: auto;
+    height: 35px;
+  }
+}
+
+input[type=text] {
+    /*padding: 12px 20px;*/
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.cancel-region {
+  margin-left: 0px;
+}
+
+.btn {
+  text-align: center;
+  padding: 0 25px;
+  font-size: 1rem;
+  line-height: 1rem;
+  vertical-align: middle;
+  height: 30px;
+  min-width: 50px;
+  max-width: 200px;
+  height: 30px;
+  -webkit-transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+}
+
+.cancel-region .btn {
+  margin-left: 0px;
+  font-size: .8rem;
+}
+
+.app-controls h6 {
+  margin-bottom: 8px;
+}
+select.app-controls  {
+  margin-bottom: 6px;
+}
+
+button#menu1,
+button#btn-cancel {
+  font-size: .9rem;
+}
+
+.create-policy > button.btn.btn--primary {
+    min-width: 65px;
+}
+
+.form-control.input-md {
+  margin-bottom: 5px;
+  margin-top: 0px;
+  height: 30px;
+  z-index: 0;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  /*height: 34px;*/
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-group {
+  padding: 0;
+  font-size: .8rem;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.form-group span {
+ /*font-weight: 400;*/
+ font-size: .8rem;
+ /*margin-bottom: 5px;*/
+}
+
+.form-group label {
+  /*margin-left: 20px;*/
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  outline: 0;
+  border-radius: 0px;
+  margin-top: 15px;
+}
+
+.modal-header {
+    padding: 0px 0 5px 0;
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    -webkit-appearance: none;
+    opacity: 2;
+    z-index: 9999;
+}
+.close {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #58585b;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 9000;
+}
+
+
+.profiles-list-container {
+  background-color: #ccc;
+}
+
+ul.profiles-list {
+  list-style: none;
+  margin-left: -20px;
+}
+
+.activity__timestamp span.icon-edit,
+.activity__timestamp span.icon-trash,
+.scoreboard__subtitle > span > span.icon-edit,
+.scoreboard__subtitle > span > span.icon-trash {
+  color: rgb(158, 158, 162);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 5px 0px 4px;
+}
+
+.activity__timestamp span.icon-edit:hover,
+.activity__timestamp span.icon-trash:hover,
+.scoreboard__subtitle > span > span.icon-edit:hover,
+.scoreboard__subtitle > span > span.icon-trash:hover {
+  opacity: .6;
+}
+
+.scoreboard__subtitle {
+  overflow: visible;
+}
+.policy-generator {
+  margin: 3px 0;
+}
+
+.policy-panel-edit {
+  margin: 4px 0;
+  color: #ccc;
+}
+
+.policy-form  {
+  /*overflow-y: auto;
+	overflow-x: hidden;*/
+  max-width: 100%;
+  /*max-height: 600px;*/
+  margin: 0 16px;
+}
+
+.policy-form::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 2px;
+}
+
+.activity.composition::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+.activity.composition::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #ccc;
+  margin: 2px;
+}
+
+.policies  {
+  overflow-y: auto;
+	overflow-x: hidden;
+  max-height: 200px;
+}
+
+.policies::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 2px;
+}
+
+.policies::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+.policies::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #ccc;
+  margin: 2px;
+}
+
+.label-is {
+  border: 2px solid #049fd9;
+  margin-left: 30px;
+  font-size: .9rem;
+  padding: 4px;
+  margin-bottom: 5px;
+  display: inline-block;;
+}
+
+.group-units {
+  clear: both;
+  margin-left: 10px;
+}
+
+label.control-label {
+  width: 60px;
+  margin-right: 10px;
+}
+label.calaneder {
+  width: 85px;
+}
+
+.targets-list  {
+  overflow-y: scroll;
+	overflow-x: hidden;
+  height: 174px;
+  width: 260px;
+  margin-left: 0px;
+  padding: 0px 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 4px;
+}
+
+.targets-list > label {
+  display: block;
+  padding: 4px 0;
+}
+
+.targets-list > label.checkbox {
+  width:240px;
+}
+
+input.targets-search {
+    height: 30px;
+    margin-bottom: 5px;
+    width: 192px;
+  }
+
+.properties  {
+  overflow-y: auto;
+	overflow-x: hidden;
+  height: 174px;
+  width: 260px;
+  margin-left: 0px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 4px;
+  z-index: 1;
+}
+
+.properties-metric {
+  overflow-y: auto;
+	overflow-x: hidden;
+  width: 260px;
+  margin-left: 0px;
+  padding: 5px;
+  margin-bottom: 4px;
+  border: 1px solid #dfdfdf;
+  z-index: 1;
+}
+
+.input-group {
+  margin: 0;
+}
+
+.targets-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 2px;
+}
+
+.targets-list::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+.targets-list::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #ccc;
+  margin: 2px;
+}
+
+.properties::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 2px;
+}
+
+.properties::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+.properties::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #ccc;
+  margin: 2px;
+}
+
+label.control-label {
+  width: 60px;
+  margin-right: 10px;
+}
+label.calaneder {
+  width: 85px;
+}
+
+.desc-box {
+  padding: 0px;
+  margin:4px 0;
+}
+
+form.form-horizontal {
+    margin: 0;
+}
+
+.app-instances {
+    background-color: #049fd9;
+    color: #fff;
+    padding: 10px;
+    height: 40px;
+    font-weight: 800;
+}
+
+.btn {
+  /*min-width: 80px;*/
+  /*margin-top: 5px;*/
+  font-size: .9rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.label--small {
+  margin-bottom: 6px;
+  font-size: .8rem;
+}
+
+/* mobile view styles */
+@media (max-width: 768px) {
+  .mobile-app {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+  }
+
+  h5 {
+    font-size: .9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 100;
+    text-align: center;
+    line-height: 1;
+    max-width: 200px;
+    font-weight: 400;
+  }
+
+  h6 {
+    font-size: .9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 100;
+    text-align: center;
+    line-height: 1;
+    max-width: 200px;
+    font-weight: 400;
+  }
+
+  .cancel-region {
+    display: none;
+  }
+
+  input.git-input {
+    width: 228px;
+    margin-left: 38px;
+  }
+  .go-btn {
+    position: absolute;
+    top: 0px;
+    left: 295px;
+  }
+
+  .content__main {
+    margin-top: 10px;
+    padding: 0 2px 0 4px;
+  }
+
+  .dropdown-mobile {
+    margin-left: 90px;
+    text-align: left;
+  }
+
+  .btn-mobile {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .create-policy {
+    width: 100%;
+    clear: both;
+  }
+  .modal-content {
+    width: 100%;
+    margin-top: 22px;
+    font-size: .9rem;
+    margin-left: 5px;
+  }
+
+  .modal-body {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .modal-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border-radius: 2px;
+  }
+
+  .modal-content::-webkit-scrollbar {
+    width: 2px;
+    background-color: transparent;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: #ccc;
+    margin: 2px;
+  }
+
+  .btn {
+    font-size: .8rem;
+  }
+}
+
+.form-group span.icon-calendar {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #7f7f86;
+}
+
+a.modal-close  {
+  color: #fff;
+}
+
+input[type="text"] {
+  color: #58585b;
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #58585b;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #58585b;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #58585b;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: #58585b;
+}
+
+/* git placeholder */
+input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ccc;
+}
+input[type="email"]::-moz-placeholder { /* Firefox 19+ */
+  color: #ccc;
+}
+input[type="email"]:-ms-input-placeholder { /* IE 10+ */
+  color: #ccc;
+}
+input[type="email"]:-moz-placeholder { /* Firefox 18- */
+  color: #ccc;
+}
+
+span.label.label--large {
+    margin-bottom: 10px;
+}
+
+select.actions {
+  background-color: #049fd9;
+  color: #fff;
+  border-radius: 50%;
+  height: 30px;
+}
+
+/* workaround for bootstrap */
+.panel {
+  border-radius: 0;
+}
+
+.modal-collapse {
+  z-index: 9999;
+  margin-bottom: 10px;
+  position: fixed;
+  height: 45px;
+  width: 100%;
+  background-color: #2b5592;
+  text-align:center;
+  font-size:1rem;
+  padding-top: 2px;
+  color:#fff;
+  font-weight:400;
+}
+
+.popover {
+  max-width: 500px;
+  background-color: #58585b;
+  border-radius: 2px;
+}
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+  margin-left: 0;
+}
+div.checkbox label:before {
+  border-radius: 4px;
+}
+div.checkbox input:checked + label:before {
+  border-color: green;
+  background: green;
+  color: #fff;
+  line-height: 16px;
+}
+div.checkbox {
+  position: relative;
+}
+div.checkbox label {
+  padding-left: 30px;
+}
+div.checkbox label:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+div.checkbox input {
+  display: block;
+  float: left;
+  outline: none;
+  margin-left: -9999px !important;
+}
+div.checkbox input.hidden + label {
+  padding-left: 0;
+}
+div.checkbox input.hidden + label:before {
+  display: none;
+}
+
+.modal-footer {
+  margin: 5px 0;
+  border: none;
+}
+
+/* bootstrap hacks for ATlantic UI styles. DO NOT remove */
+.bootstrap-datetimepicker-widget {
+  font-size: .9rem;
+}
+
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute,
+.bootstrap-datetimepicker-widget .timepicker-second {
+  width: 40px;
+  font-weight: 500;
+  font-size: .9rem;
+  margin: 0;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background-color: #049fd9;
+}
+
+.bootstrap-datetimepicker-widget table td span.active {
+  background-color: #049fd9;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.form-control::-moz-placeholder {
+  color: #58585b;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #58585b;
+}
+.form-control::-webkit-input-placeholder {
+  color: #58585b;
+}
+.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.form-horizontal .form-group {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.popover {
+  font-family: CiscoSans;
+  color: #fff;
+}
+
+.input-group-addon {
+  padding: 6px 0px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: left;
+  background-color: #fff;
+  border: none;
+  border-radius: 0px;
+}

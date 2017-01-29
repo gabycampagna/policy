@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Policy Editor - Metrics</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/aui-standard.min.css">
+    <link rel="stylesheet" href="../css/jquery.modal.css">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.css"/>
+    <link rel="stylesheet" href="../css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="../js/vendors/jquery-2.1.4.min.js"></script>
+    <script src="../js/vendors/bootstrap.min.js"></script>
+    <script src="../js/vendors/moment.js"></script>
+    <script src="../js/vendors/bootstrap-datetimepicker.js"></script>
+    <script src="../js/vendors/bootstrap-select.js"></script>
+    <script src="../js/vendors/jquery.modal.js"></script>
+  </head>
+
+  <body class="aui content">
+    <div class="container-fluid">
+      <header class="header header--compressed">
+          <div class="header-bar container">
+            <!-- <a class="button button--icon toggle-menu">
+                <span class="icon-list-menu"></span>
+            </a> -->
+            <a class="header-bar__logo">
+             
+            </a>
+            <div class="header-bar__main">
+              <div class="header-heading">
+                <h1 class="page-title">Policy Editor</h1>
+              </div>
+            </div>
+            <div class="header-toolbar">
+              <!-- Login modal -->
+              <div id="ex1" style="display:none;">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="text-align: center;">
+                    <form class="form-horizontal">
+                      <div class="panel panel--dkblue modal-title"><h6>Login</h6></div>
+                      <fieldset>
+                        <div class="form-group">
+                          <div class="col-xs-12 col-md-12">
+                            <span class="label label--small">Username</span>
+                            <input id="Name" name="Name" type="text" class="login-input">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-xs-12 col-md-12">
+                            <span class="label label--small">Password</span>
+                            <input id="Name" name="Name" type="text">
+                          </div>
+                        </div>
+                      </fieldset>
+                    </form>
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                      <span><button type="button" class="btn btn-primary">Login</button><span>
+                      <span><button type="button" class="btn btn-primary" aria-label="Close"><a href="#" class="modal-close" rel="modal:close">Close</a></button></span>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div>
+              </div>
+            <!-- Link to open the login modal -->
+            <a href="#ex1" rel="modal:open" class="button button--icon">
+              <span class="icon-cog"></span>
+            </a>
+          </div>
+        </div><!-- /.modal-content -->
+      </header>
+      <div class="content__main">
+        <div class="container">
+          <form class="form-horizontal">
+            <fieldset>
+              <div class="row app-controls">
+                <div class="col-md-2 col-xs-12">
+                  <div class="row mobile-app">
+                    <div class="col-md-8 col-xs-12">
+                      <span class="label label--small mobile-app">Runtime</span>
+                    </div>
+                    <div class="col-md-8 col-xs-12">
+                      <select id="basic" class="selectpicker app-controls input-group-lg" data-live-search="true">
+                        <option value="1">Simple Application</option>
+                        <option value="1">Simple Application 2</option>
+                        <option value="1">Simple Application 3</option>
+                        <option value="1">Simple Application 4</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+<!--                 <div class="col-md-5 col-xs-12">
+                  <div id="designtime" class="row mobile-app">
+                    <span class="label label--small">Design Time</span>
+                      <div class="row mobile-app">
+                        <div class="col-md-7 col-xs-12">
+                          <input id="Name" class="form-control git-input" disabled="disabled" name="Name" type="email" placeholder="Copy and Paste GIT URL">
+        
+                          <button type="button" class="btn btn--primary btn-mobile go-btn">
+                              Go
+                          </button>
+                        </div>
+                      </div>
+                  </div>
+                </div> -->
+              </div>
+            </fieldset>
+          </form>
+          <div class="panel">
+            <h5>Simple Application</h5>
+            <hr>
+          </div>
+          <div class="row policy-generator btn-mobile">
+            <div class="col-md-6 col-xs-12">
+            <span class="label label--large mobile-app">Policies</span>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div class="create-policy pull-right">
+                <!-- slide down panel for policy-->
+              <button id="slide-policy" class="btn btn--primary">Create</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="activity composition policy-form" id="policy-panel">
+            <div class="policy-container">
+              <form class="form-horizontal">
+                <fieldset>
+                  <div class="form-group">
+                    <div class="col-xs-10 col-md-6">
+                      <span class="label label--small">Name</span>
+                      <input id="Name" name="Name" type="text" placeholder="" class="form-control input-md">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-10 col-md-10">
+                      <div class="label label--small">Select Policy Type</div>
+                      <select id="basic" class="selectpicker app-controls input-group-lg" data-live-search="false">
+                        <option value="1">Performance</option>
+                        <option value="2">Update</option>
+                      </select>
+                        <a class="icon-question-circle" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="The Cisco Policy Type definition that is used to declare the performance requirements of nodes or groups of nodes."></a>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="panel panel--ltgray">
+                      <h6>Performance</h6>
+                    </div>
+                  <!-- Multiple Checkboxes (inline) -->
+                    <div class="col-xs-10 col-md-10">
+                      <span class="label label--small">Targets</span>
+                      <div class="form-group">
+                       <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="false">
+                         <optgroup label="Targets">
+                           <option>MYSQL</option>
+                           <option>WordPress</option>
+                           <option>option3</option>
+                           <option>option4</option>
+                         </optgroup>
+                         <optgroup label="Targets2">
+                           <option>option1</option>
+                           <option>option2</option>
+                           <option>option3</option>
+                           <option>option4</option>
+                         </optgroup>
+                         <optgroup label="Targets3">
+                           <option>option1</option>
+                           <option>option2</option>
+                           <option>option3</option>
+                           <option>option4</option>
+                         </optgroup>
+                       </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-12 col-md-10">
+                      <span class="label label--small">Properties</span>
+                        <div class="properties-metric">
+                          <div class="input-group">
+                            <span class="input-group-addon">metric name</span>
+                            <input type="text" placeholder="" class="form-control input-md">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-10 col-md-6">
+                      <div class="form-group">
+                        <span class="label label--small">Actions</span>
+                        <select id="basic" class="selectpicker app-controls input-group-lg" data-live-search="false">
+                          <option value="1" selected="">scale up</option>
+                          <option value="2">scale down</option>
+                        </select>
+                        <a class="icon-question-circle" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Monitor a node metric attribue to determine if the value exceeds the upper bounded threshold value.
+                          When the threshold has been exceeded the Scale Up Workflow will be triggered."></a>
+                      </div>
+                      <div class="form-group">
+                        <span class="label label--small">when</span>
+                        <span class="btns">
+                          <button class="btn">&gt;</button>
+                          <button class="btn">&gt;=</button>
+                          <button class="btn">==</button>
+                          <button class="btn">&lt;=</button>
+                          <button class="btn">&lt;</button>
+                        </span>
+                      </div>
+                      <div class="form-group">
+                        <span class="label label--small">Value</span>
+                        <input id="Name" name="Name" type="text" placeholder="" class="form-control input-md">
+                      </div>
+                      <div class="form-group">
+                        <span class="label label--small">Method</span>
+                        <select id="basic" class="selectpicker app-controls input-group-sm" data-live-search="false">
+                          <option value="1" selected="">average</option>
+                        </select>
+                      </div>
+                      <div class="form-group"> <!-- Save button -->
+                        <span class="cancel-region">
+                          <span><button type="button" class="btn btn-primary" aria-label="Close">Cancel</button></span>
+                          <span><button class="btn btn--primary" name="submit" type="submit">Save</button></span>
+                        </span>
+                        <span class="cancel-policy-mobile">
+                          <span name="submit" type="submit" title="close" class="icon-close"></span>
+                          <span name="reset" type="reset" title="reset" class="icon-reset"></span>
+                          <span name="submit" type="submit" title="save" class="icon-save"></span>
+                        </span>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+             <script>
+               // Closes create form panel on page load
+               $(function() {
+                  $("#policy-panel").slideUp(0);
+               });
+               // Create form toggle toggle
+               $("#slide-policy").click(function(){
+                 $("#policy-panel").slideToggle("200");
+               });
+             </script>
+
+          <!-- All policies -->
+          <div class="policies-all">
+            <div class="activity composition policies col-md-12">
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="activity__body" id="policy-edit-item">
+                  <div class="activity__title">begin_of_month</div>
+                  <div class="activity__timestamp">
+                    <a href="#ex2" rel="modal:open">
+                      <span class="icon-edit" title="edit policy"></span>
+                    </a>
+                    <div id="ex2" style="display:none;">
+                      <div class="modal-collapse">
+                      <!-- edit form controls -->
+                        <span class="cancel-region">
+                          <span><button type="button" class="btn btn-primary" aria-label="Close"><a href="#" class="modal-close" rel="modal:close">Cancel</a></button></span>
+                          <span><button class="btn btn--negative">Delete</button></span>
+                          <span><button class="btn btn--primary" name="submit" type="submit">Save</button></span>
+                        </span>
+                        <span class="cancel-region-mobile">
+                          <span><a href="#" class="modal-close" rel="modal:close" title="cancel"><span class="icon-close"></span>
+                          </a></span>
+                          <span class="icon-trash" title="remove"></span>
+                          <span name="submit" type="submit" class="icon-save" title="save" name="submit" type="submit"></span>
+                        </span>
+                      </div>
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <form class="form-horizontal">
+                            <fieldset>
+                              <div class="form-group">
+                                <div class="col-xs-10 col-md-10">
+                                  <span class="label label--small">Name</span>
+                                  <input id="Name" name="Name" type="text" placeholder="begin_of_month" class="form-control input-md">
+                                </div>
+                              </div>
+                              <!-- Form type -->
+                              <div class="form-group">
+                                <div class="panel panel--ltgray">
+                                  <h6>Update</h6>
+                                </div>
+                              </div>
+                              <!-- Multiple Checkboxes (inline) -->
+                              <div class="col-xs-10 col-md-10">
+                                <span class="label label--small">Targets</span>
+                                <div class="form-group">
+                                 <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="false">
+                                   <optgroup label="Targets">
+                                     <option>MYSQL</option>
+                                     <option>WordPress</option>
+                                     <option>option3</option>
+                                     <option>option4</option>
+                                   </optgroup>
+                                   <optgroup label="Targets2">
+                                     <option>option1</option>
+                                     <option>option2</option>
+                                     <option>option3</option>
+                                     <option>option4</option>
+                                   </optgroup>
+                                   <optgroup label="Targets3">
+                                     <option>option1</option>
+                                     <option>option2</option>
+                                     <option>option3</option>
+                                     <option>option4</option>
+                                   </optgroup>
+                                 </select>
+                                </div>
+                            </div>
+                              <div class="form-group">
+                                <div class="col-xs-12 col-md-10">
+                                  <span class="label label--small">Properties</span>
+                                    <div class="properties">
+                                      <div class="input-group">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">min_instance</span>
+                                          <input id="Name" name="Name" type="text" placeholder="1" class="form-control input-md">
+                                        </div>
+                                        <span class="input-group-addon">max_instance</span>
+                                        <input id="Name" name="Name" type="text" placeholder="5" class="form-control input-md">
+                                      </div>
+                                      <div class="input-group">
+                                        <span class="input-group-addon">default_instances</span>
+                                        <input id="Name" name="Name" type="text" placeholder="2" class="form-control input-md">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-xs-12 col-md-12">
+                                  <!-- Date input -->
+                                    <div class="panel panel--ltgray">
+                                      <h6>Schedule</h6>
+                                    </div>
+                                  </div>
+                                    <div class="col-xs-10 col-md-6">
+                                      <div class="form-group">
+                                          <span class="label label--small">Actions</span>
+                                          <select id="basic" class="selectpicker app-controls input-group-lg" data-live-search="false">
+                                            <option value="1">update nodes</option>
+                                          </select>
+                                          <a class="icon-question-circle" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Update the scaling attributes of the target nodes with new value. The updates can be applied based on a specific schedule."></a>
+                                      </div>
+                                      <div class="form-group">
+                                        <span class="control-label calaneder" for="date">Start Time</span>
+                                        <span class="icon-calendar" title="calendar" id="date" name="date" type="text"/></span>
+                                        <input type='text' class="form-control" placeholder="2016-11-01T00:00:00Z" id='datetimepicker1' />
+                                      </div>
+                                      <div class="form-group">
+                                        <span class="control-label calaneder" for="date">End Time</span>
+                                        <span class="icon-calendar" title="calendar" id="date" name="date"type="text"/></span>
+                                        <input type='text' class="form-control"  placeholder="2016-11-25T00:00:00Z" id='datetimepicker2' />
+                                      </div>
+                                  </fieldset>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <span title="icon-trash">
+                            <a href="#ex6" rel="modal:open"><span class="icon-trash" title="remove"></span></a>
+                           </span>
+                           <div id="ex6" style="display:none;">
+                             <div class="modal-dialog">
+                               <div class="modal-content">
+                                 <form class="form-horizontal">
+                                   <fieldset>
+                                     <div class="alert alert-warning">
+                                       <div>Policy removal confirmation:</div>
+                                       <span><a href="#" id="policy-remove" rel="modal:close" class="alert">Delete</a></span>
+                                       <span><a href="#" class="modal-close alert" rel="modal:close">Undo</a></span>
+                                     </div>
+                                   </fieldset>
+                                 </form>
+                               </div>
+                             </div>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="activity__body" id="policy-edit-item2">
+                        <div class="activity__title">end_of_month</div>
+                        <div class="activity__timestamp">
+                          <a href="#ex3" rel="modal:open">
+                            <span class="icon-edit" title="edit policy"></span>
+                          </a>
+                          <div id="ex3" style="display:none;">
+                            <div class="modal-collapse">
+                            <!-- edit form controls -->
+                              <span class="cancel-region">
+                                <span><button type="button" class="btn btn-primary" aria-label="Close"><a href="#" class="modal-close" rel="modal:close">Cancel</a></button></span>
+                                <span><button class="btn btn--negative">Delete</button></span>
+                                <span><button class="btn btn--primary" name="submit" type="submit">Save</button></span>
+                              </span>
+                              <span class="cancel-region-mobile">
+                                <span><a href="#" class="modal-close" rel="modal:close" title="cancel"><span class="icon-close"></span>
+                                </a></span>
+                                <span class="icon-trash" title="remove"></span>
+                                <span name="submit" type="submit" class="icon-save" title="save" name="submit" type="submit"></span>
+                              </span>
+                            </div>
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <form class="form-horizontal">
+                                  <fieldset>
+                                    <div class="form-group">
+                                      <div class="col-xs-10 col-md-10">
+                                        <span class="label label--small">Name</span>
+                                        <input id="Name" name="Name" type="text" placeholder="end_of_month" class="form-control input-md">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="panel panel--ltgray">
+                                        <h6>Update</h6>
+                                      </div>
+                                    </div>
+                                    <!-- Multiple Checkboxes (inline) -->
+                                    <div class="col-xs-10 col-md-10">
+                                      <span class="label label--small">Targets</span>
+                                      <div class="form-group">
+                                       <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="false">
+                                         <optgroup label="Targets">
+                                           <option>MYSQL</option>
+                                           <option>WordPress</option>
+                                           <option>option3</option>
+                                           <option>option4</option>
+                                         </optgroup>
+                                         <optgroup label="Targets2">
+                                           <option>option1</option>
+                                           <option>option2</option>
+                                           <option>option3</option>
+                                           <option>option4</option>
+                                         </optgroup>
+                                         <optgroup label="Targets3">
+                                           <option>option1</option>
+                                           <option>option2</option>
+                                           <option>option3</option>
+                                           <option>option4</option>
+                                         </optgroup>
+                                       </select>
+                                      </div>
+                                  </div>
+                                    <div class="form-group">
+                                      <div class="col-xs-12 col-md-10">
+                                        <span class="label label--small">Properties</span>
+                                          <div class="properties">
+                                            <div class="input-group">
+                                              <div class="input-group">
+                                                <span class="input-group-addon">min_instance</span>
+                                                <input id="Name" name="Name" type="text" placeholder="5" class="form-control input-md">
+                                              </div>
+                                              <span class="input-group-addon">max_instance</span>
+                                              <input id="Name" name="Name" type="text" placeholder="8" class="form-control input-md">
+                                            </div>
+                                            <div class="input-group">
+                                              <span class="input-group-addon">default_instances</span>
+                                              <input id="Name" name="Name" type="text" placeholder="5" class="form-control input-md">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="col-xs-12 col-md-12">
+                                        <!-- Date input -->
+                                          <div class="panel panel--ltgray">
+                                            <h6>Schedule</h6>
+                                          </div>
+                                        </div>
+                                          <div class="col-xs-10 col-md-6">
+                                            <div class="form-group">
+                                                <span class="label label--small">Actions</span>
+                                                <select id="basic" class="selectpicker app-controls input-group-lg" data-live-search="false">
+                                                  <option value="1">update nodes</option>
+                                                </select>
+                                                <a class="icon-question-circle" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Update the scaling attributes of the target nodes with new value. The updates can be applied based on a specific schedule."></a>
+                                            </div>
+                                            <div class="form-group">
+                                              <span class="control-label calaneder" for="date">Start Time</span>
+                                              <span class="icon-calendar" title="calendar" id="date" name="date" type="text"/></span>
+                                              <input type='text' class="form-control" placeholder="2016-11-01T00:00:00Z" id='datetimepicker3' />
+                                            </div>
+                                            <div class="form-group">
+                                              <span class="control-label calaneder" for="date">End Time</span>
+                                              <span class="icon-calendar" title="calendar" id="date" name="date"type="text"/></span>
+                                              <input type='text' class="form-control"  placeholder="2016-11-25T00:00:00Z" id='datetimepicker4' />
+                                            </div>
+                                        </fieldset>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                                <span title="icon-trash">
+                                  <a href="#ex7" rel="modal:open"><span class="icon-trash" title="remove"></span></a>
+                                 </span>
+                                 <div id="ex7" style="display:none;">
+                                  <div class="modal-dialog">
+                                   <div class="modal-content">
+                                     <form class="form-horizontal">
+                                       <fieldset>
+                                         <div class="alert alert-warning">
+                                           <div>Policy removal confirmation:</div>
+                                           <span><a href="#" id="policy-remove2" rel="modal:close" class="alert">Delete</a></span>
+                                           <span><a href="#" class="modal-close alert" rel="modal:close">Undo</a></span>
+                                         </div>
+                                       </fieldset>
+                                     </form>
+                                   </div>
+                                 </div>
+                               </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                            <div id="policy-edit-item3" class="activity__body">
+                              <div class="activity__title">max_avg_requests_exceeded</div>
+                              <div class="activity__timestamp">
+                                <a href="#ex4" rel="modal:open">
+                                  <span class="icon-edit" title="edit policy"></span>
+                                </a>
+                                <div id="ex4" style="display:none;">
+                                  <div class="modal-collapse">
+                                  <!-- edit form controls -->
+                                    <span class="cancel-region">
+                                      <span><button type="button" class="btn btn-primary" aria-label="Close"><a href="#" class="modal-close" rel="modal:close">Cancel</a></button></span>
+                                      <span><button class="btn btn--negative">Delete</button></span>
+                                      <span><button class="btn btn--primary" name="submit" type="submit">Save</button></span>
+                                    </span>
+                                    <span class="cancel-region-mobile">
+                                      <span><a href="#" class="modal-close" rel="modal:close" title="cancel"><span class="icon-close"></span>
+                                      </a></span>
+                                      <span class="icon-trash" title="remove"></span>
+                                      <span name="submit" type="submit" class="icon-save" title="save" name="submit" type="submit"></span>
+                                    </span>
+                                  </div>
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <form class="form-horizontal">
+                                      <fieldset>
+                                        <div class="form-group">
+                                          <div class="col-xs-10 col-md-6">
+                                            <span class="label label--small">Name</span>
+                                            <input id="Name" name="Name" type="text" placeholder="max_avg_requests_exceeded" class="form-control input-md">
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <div class="panel panel--ltgray">
+                                            <h6>Performance</h6>
+                                          </div>
+                                        </div>
+                                        <!-- Multiple Checkboxes (inline) -->
+                                        <div class="col-xs-10 col-md-10">
+                                          <span class="label label--small">Targets</span>
+                                          <div class="form-group">
+                                           <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="false">
+                                             <optgroup label="Targets">
+                                               <option>MYSQL</option>
+                                               <option>WordPress</option>
+                                               <option>option3</option>
+                                               <option>option4</option>
+                                             </optgroup>
+                                             <optgroup label="Targets2">
+                                               <option>option1</option>
+                                               <option>option2</option>
+                                               <option>option3</option>
+                                               <option>option4</option>
+                                             </optgroup>
+                                             <optgroup label="Targets3">
+                                               <option>option1</option>
+                                               <option>option2</option>
+                                               <option>option3</option>
+                                               <option>option4</option>
+                                             </optgroup>
+                                           </select>
+                                          </div>
+                                      </div>
+                                        <div class="form-group">
+                                          <div class="col-xs-12 col-md-10">
+                                            <span class="label label--small">Properties</span>
+                                              <div class="properties-metric">
+                                                <div class="input-group">
+                                                  <span class="input-group-addon">metric name</span>
+                                                  <input type="text" placeholder="requests_per_minute" class="form-control input-md">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-xs-12 col-md-12">
+                                            <div class="form-group">
+                                              <span class="label label--small">Actions</span>
+                                              <select id="basic" class="selectpicker app-controls input-group-lg" data-live-search="false">
+                                                <option value="1" selected="">scale up</option>
+                                                <option value="2">scale down</option>
+                                              </select>
+                                              <a class="icon-question-circle" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Monitor a node metric attribue to determine if the value exceeds the upper bounded threshold value.
+                                                When the threshold has been exceeded the Scale Up Workflow will be triggered."></a>
+                                            </div>
+                                            <div class="form-group">
+                                              <span class="label label--small">when</span>
+                                              <span class="btns">
+                                                <button class="btn">&gt;</button>
+                                                <button class="btn">&gt;=</button>
+                                                <button class="btn">==</button>
+                                                <button class="btn">&lt;=</button>
+                                                <button class="btn">&lt;</button>
+                                              </span>
+                                            </div>
+                                            <div class="form-group">
+                                              <span class="label label--small">Value</span>
+                                              <input id="Name" name="Name" type="text" placeholder="> 500" class="form-control input-md">
+                                            </div>
+                                            <div class="form-group">
+                                              <span class="label label--small">Method</span>
+                                              <select id="basic" class="selectpicker app-controls input-group-sm" data-live-search="false">
+                                                <option value="1" selected="">average</option>
+                                              </select>
+                                            </div>
+                                          </fieldset>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <span title="icon-trash">
+                                    <a href="#ex8" rel="modal:open"><span class="icon-trash" title="remove"></span></a>
+                                   </span>
+                                   <div id="ex8" style="display:none;">
+                                     <div class="modal-dialog">
+                                       <div class="modal-content">
+                                         <form class="form-horizontal">
+                                           <fieldset>
+                                             <div class="alert alert-warning">
+                                               <div>Policy removal confirmation:</div>
+                                               <span><a href="#" id="policy-remove3" rel="modal:close" class="alert">Delete</a></span>
+                                               <span><a href="#" class="modal-close alert" rel="modal:close">Undo</a></span>
+                                             </div>
+                                           </fieldset>
+                                         </form>
+                                       </div>
+                                     </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="activity__body" id="policy-edit-item4">
+                                <div class="activity__title">min_avg_requests_exceeded</div>
+                                <div class="activity__timestamp">
+                                  <a href="#ex5" rel="modal:open">
+                                    <span class="icon-edit" title="edit policy"></span>
+                                  </a>
+                                  <div id="ex5" style="display:none;">
+                                    <div class="modal-collapse">
+                                    <!-- edit form controls -->
+                                      <span class="cancel-region">
+                                        <span><button type="button" class="btn btn-primary" aria-label="Close"><a href="#" class="modal-close" rel="modal:close">Cancel</a></button></span>
+                                        <span><button class="btn btn--negative">Delete</button></span>
+                                        <span><button class="btn btn--primary" name="submit" type="submit">Save</button></span>
+                                      </span>
+                                      <span class="cancel-region-mobile">
+                                        <span><a href="#" class="modal-close" rel="modal:close" title="cancel"><span class="icon-close"></span>
+                                        </a></span>
+                                        <span class="icon-trash" title="remove"></span>
+                                        <span name="submit" type="submit" class="icon-save" title="save" name="submit" type="submit"></span>
+                                      </span>
+                                    </div>
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <form class="form-horizontal">
+                                          <fieldset>
+                                            <div class="form-group">
+                                              <div class="col-xs-10 col-md-6">
+                                                <span class="label label--small">Name</span>
+                                                <input id="Name" name="min_avg_requests_exceeded" type="text" placeholder="min_avg_requests_exceeded" class="form-control input-md">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <div class="panel panel--ltgray">
+                                                <h6>Peformance</h6>
+                                              </div>
+                                            </div>
+                                            <!-- Multiple Checkboxes (inline) -->
+                                            <div class="col-xs-10 col-md-10">
+                                              <span class="label label--small">Targets</span>
+                                              <div class="form-group">
+                                               <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="false">
+                                                 <optgroup label="Targets">
+                                                   <option>MYSQL</option>
+                                                   <option>WordPress</option>
+                                                   <option>option3</option>
+                                                   <option>option4</option>
+                                                 </optgroup>
+                                                 <optgroup label="Targets2">
+                                                   <option>option1</option>
+                                                   <option>option2</option>
+                                                   <option>option3</option>
+                                                   <option>option4</option>
+                                                 </optgroup>
+                                                 <optgroup label="Targets3">
+                                                   <option>option1</option>
+                                                   <option>option2</option>
+                                                   <option>option3</option>
+                                                   <option>option4</option>
+                                                 </optgroup>
+                                               </select>
+                                              </div>
+                                          </div>
+                                            <div class="form-group">
+                                              <div class="col-xs-12 col-md-10">
+                                                <span class="label label--small">Properties</span>
+                                                  <div class="properties-metric">
+                                                    <div class="input-group">
+                                                      <span class="input-group-addon">metric name</span>
+                                                      <input type="text" placeholder="requests_per_minute" class="form-control input-md">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xs-12 col-md-12">
+                                                <div class="form-group">
+                                                  <span class="label label--small">Actions</span>
+                                                  <select id="basic" class="selectpicker app-controls input-group-lg" data-live-search="false">
+                                                    <option value="1" selected="">scale up</option>
+                                                    <option value="2">scale down</option>
+                                                  </select>
+                                                  <a class="icon-question-circle" tabindex="0" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Monitor a node metric attribue to determine if the value exceeds the upper bounded threshold value.
+                                                    When the threshold has been exceeded the Scale Up Workflow will be triggered."></a>
+                                                </div>
+                                                <div class="form-group">
+                                                  <span class="label label--small">when</span>
+                                                  <span class="btns">
+                                                    <button class="btn">&gt;</button>
+                                                    <button class="btn">&gt;=</button>
+                                                    <button class="btn">==</button>
+                                                    <button class="btn">&lt;=</button>
+                                                    <button class="btn">&lt;</button>
+                                                  </span>
+                                                </div>
+                                                <div class="form-group">
+                                                  <span class="label label--small">Value</span>
+                                                  <input id="Name" name="Name" type="text" placeholder="< 50" class="form-control input-md">
+                                                </div>
+                                                <div class="form-group">
+                                                  <span class="label label--small">Method</span>
+                                                  <select id="basic" class="selectpicker app-controls input-group-sm" data-live-search="false">
+                                                    <option value="1" selected="">average</option>
+                                                  </select>
+                                                </div>
+                                            </fieldset>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <span title="icon-trash">
+                                      <a href="#ex9" rel="modal:open"><span class="icon-trash" title="remove"></span></a>
+                                     </span>
+                                     <div id="ex9" style="display:none;">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <form class="form-horizontal">
+                                             <fieldset>
+                                               <div class="alert alert-warning">
+                                                 <div>Policy removal confirmation:</div>
+                                                 <span><a href="#" id="policy-remove4" rel="modal:close" class="alert">Delete</a></span>
+                                                 <span><a href="#" class="modal-close alert" rel="modal:close">Undo</a></span>
+                                               </div>
+                                             </fieldset>
+                                           </form>
+                                         </div>
+                                       </div>
+                                     </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      <!-- END All policies -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script>
+                  // Policy edit panel form controls
+                $("#policy-remove").click(function(){
+                  $("#policy-edit-item").remove();
+                });
+                $("#policy-remove2").click(function(){
+                  $("#policy-edit-item2").remove();
+                });
+                $("#policy-remove3").click(function(){
+                  $("#policy-edit-item3").remove();
+                });
+                $("#policy-remove4").click(function(){
+                  $("#policy-edit-item4").remove();
+                });
+
+                // popover
+                $(document).ready(function(){
+                    $('[data-toggle="popover"]').popover({
+                        trigger: 'hover',
+                        delay: {show: 300, hide: 500}
+                    });
+                });
+              </script>
+
+              <script>  // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+                $('.dropdown').hover(function() {
+                  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+                      }, function() {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+                  });
+
+                  // transition for modals
+                  $('a[href="#ex1"]').click(function(event) {
+                     event.preventDefault();
+                     $(this).modal({
+                       fadeDuration: 250
+                     });
+                      return false;
+                   });
+                   $('a[href="#ex2"]').click(function(event) {
+                      event.preventDefault();
+                      $(this).modal({
+                        fadeDuration: 250
+                      });
+                       return false;
+                    });
+                    $('a[href="#ex3"]').click(function(event) {
+                       event.preventDefault();
+                       $(this).modal({
+                         fadeDuration: 250
+                       });
+                        return false;
+                     });
+                     $('a[href="#ex4"]').click(function(event) {
+                        event.preventDefault();
+                        $(this).modal({
+                          fadeDuration: 250
+                        });
+                         return false;
+                      });
+                      $('a[href="#ex5"]').click(function(event) {
+                         event.preventDefault();
+                         $(this).modal({
+                           fadeDuration: 250
+                         });
+                          return false;
+                       });
+                       $('a[href="#ex6"]').click(function(event) {
+                          event.preventDefault();
+                          $(this).modal({
+                            fadeDuration: 250
+                          });
+                           return false;
+                        });
+                        $('a[href="#ex7"]').click(function(event) {
+                           event.preventDefault();
+                           $(this).modal({
+                             fadeDuration: 250
+                           });
+                            return false;
+                         });
+                         $('a[href="#ex8"]').click(function(event) {
+                            event.preventDefault();
+                            $(this).modal({
+                              fadeDuration: 250
+                            });
+                             return false;
+                          });
+                          $('a[href="#ex9"]').click(function(event) {
+                             event.preventDefault();
+                             $(this).modal({
+                               fadeDuration: 250
+                             });
+                              return false;
+                           });
+              </script>
+              <script>
+              // formating for datetime picker
+                $('#datetimepicker1').datetimepicker({format : "DD/MM/YYYY hh:mm:ss A"});
+                $('#datetimepicker2').datetimepicker({format : "DD/MM/YYYY hh:mm:ss A"});
+                $('#datetimepicker3').datetimepicker({format : "DD/MM/YYYY hh:mm:ss A"});
+                $('#datetimepicker4').datetimepicker({format : "DD/MM/YYYY hh:mm:ss A"});
+              </script>
+  </body>
+</html>

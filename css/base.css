@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("bootstrap/fonts/glyphicons-halflings-regular.eot");
+  src: url("bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("bootstrap/fonts/glyphicons-halflings-regular.woff") format("woff"), url("bootstrap/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg"); }
+
+/* Connection End */
+/* Sticky Footer Start */
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  margin-bottom: 70px; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5; }
+  footer .container-fluid > p {
+    font-size: 1.1em;
+    padding-top: 20px; }
+
+.list-group {
+  border: 0; }
+
+.list-group-item {
+  border: 0; }
+
+/* Connection End */
+/* Main Start */
+main {
+  margin-top: 100px;
+  padding-bottom: 60px; }
+
+a {
+  cursor: pointer; }
+
+p {
+  font-size: 1.2em; }
+
+/* TODO: find out what is causing left: 20 and right: 30 */
+.container-fluid {
+  padding-left: 15px !important;
+  padding-right: 15px !important; }
+
+.text-x {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.thumbnail:hover {
+  border: 1px solid #0096c8;
+  cursor: pointer; }
+
+.card-region {
+  padding-bottom: 100px; }
+
+.caret {
+  margin-left: .35em;
+  border-top: .35em solid; }
+
+.scrollable {
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  width: 102%;
+  margin-bottom: 20px; }
+
+.img-area {
+  padding-top: 15px;
+  padding-bottom: 110px;
+  width: 100%;
+  height: 100%; }
+
+.policy-text-area {
+  padding-top: 10px;
+  padding-bottom: 60px;
+  width: 100%;
+  height: 100%; }
+
+/* Thumbnail End */
+.my-recipe-title {
+  margin-bottom: 20px; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.margin-md {
+  margin-bottom: 50px; }
+
+.margin-lg {
+  margin-bottom: 100px; }
+
+.generator-label {
+  font-size: 1.5em; }
+
+.policy-area {
+  margin-top: 1.4em; }
+
+.policy-title {
+  margin-bottom: 20px; }
+
+#new-policy {
+  float: right !important;
+  margin-bottom: 20px; }
+
+.description {
+  height: auto; }
+
+.margin-left {
+  margin-left: 15px; }
+
+.margin-right {
+  margin-right: 10px; }
+
+.tip {
+  cursor: help; }
+
+.red {
+  color: red; }
